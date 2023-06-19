@@ -94,7 +94,7 @@ const Canvas = () => {
             <img src={arrowIcon} alt="arrow-icon" width={16} height={16} />
           </Button>
         </Box>
-        <Box display="flex" justifyContent="center" marginLeft="1px">
+        <Box display="flex" justifyContent="center">
           <Box>
             <Button
               sx={{
