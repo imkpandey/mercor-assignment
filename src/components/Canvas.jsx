@@ -102,6 +102,7 @@ const Canvas = () => {
                 color: "#787486",
                 borderColor: "#787486",
                 marginRight: "10px",
+                marginLeft: "2px",
               }}
               variant="outlined"
               size="small"
