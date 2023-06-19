@@ -84,7 +84,7 @@ const Sidebar = () => {
               </Box>
             )}
           </MenuItem>
-          <Divider/>
+          <Divider />
           <Box marginY="12px">
             <Item title="Home" icon={<Category />} />
             <Item title="Messages" icon={<Message />} />
@@ -92,7 +92,7 @@ const Sidebar = () => {
             <Item title="Members" icon={<Profile2User />} />
             <Item title="Settings" icon={<Setting2 />} />
           </Box>
-          <Divider variant="middle" sx={{ mt: 2, width: "85%" }} />
+          <Divider variant="middle" sx={{ mt: 2 }} />
           <Box
             display="flex"
             justifyContent="space-between"
