@@ -51,6 +51,7 @@ const Sidebar = () => {
         "& .pro-inner-item": {
           color: "#787486 !important",
           padding: "5px 15px 4px 20px !important",
+          marginRight: "5px !important"
         },
         "& .pro-inner-item:hover": {
           background: "#EDEAFA !important",
@@ -119,6 +120,7 @@ const Sidebar = () => {
               justifyContent="space-between"
               bgcolor="#EDEAFA"
               borderRadius="8px"
+              marginRight="5px"
             >
               <Box display="flex" padding="15px 30px 10px 30px">
                 <Circle sx={{ width: "15px", fill: "#7AC555" }} />
