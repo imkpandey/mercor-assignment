@@ -94,7 +94,7 @@ const Canvas = () => {
             <img src={arrowIcon} alt="arrow-icon" width={16} height={16} />
           </Button>
         </Box>
-        <Box display="flex" justifyContent="center">
+        <Box display="flex" justifyContent="center" marginLeft="1px">
           <Box>
             <Button
               sx={{
@@ -102,7 +102,6 @@ const Canvas = () => {
                 color: "#787486",
                 borderColor: "#787486",
                 marginRight: "10px",
-                marginLeft: "1px",
               }}
               variant="outlined"
               size="small"
