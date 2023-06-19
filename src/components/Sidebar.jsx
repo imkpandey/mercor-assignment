@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import {
@@ -10,7 +10,8 @@ import {
   AddSquare,
 } from "iconsax-react";
 import { Circle, MoreHoriz } from "@mui/icons-material";
-import { Box, Typography, IconButton, Divider } from "@mui/material";
+import { Box, Typography, IconButton, Divider, useTheme } from "@mui/material";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import ArrowLeft from "./icons/ArrowLeft";
 import ArrowRight from "./icons/ArrowRight";
 import logoIcon from "../assets/logo.svg";
@@ -25,7 +26,13 @@ const Item = ({ title, icon }) => {
 };
 
 const Sidebar = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
   const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    {matches ? setIsCollapsed(true) : setIsCollapsed(false)}
+  }, [matches])
 
   return (
     <Box

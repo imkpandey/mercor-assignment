@@ -1,4 +1,12 @@
-import { Box, IconButton, InputBase, Divider, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  InputBase,
+  Divider,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import {
   SearchNormal1,
   Calendar2,
@@ -9,10 +17,25 @@ import {
 import user from "../assets/user.svg";
 
 const Topbar = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <>
-      <Box display="flex" justifyContent="space-between" pt={2} px={4} height="61px">
-        <Box display="flex" bgcolor="#F5F5F5" borderRadius="6px" height={45} width={400}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        pt={2}
+        px={4}
+        height="61px"
+      >
+        <Box
+          display="flex"
+          bgcolor="#F5F5F5"
+          borderRadius="6px"
+          height={45}
+          width={400}
+        >
           <IconButton sx={{ pl: 3, color: "grey" }}>
             <SearchNormal1 />
           </IconButton>
@@ -22,31 +45,35 @@ const Topbar = () => {
           />
         </Box>
         <Box display="flex" alignItems="center">
-          <Box mx={3}>
-            <IconButton>
-              <Calendar2 />
-            </IconButton>
-            <IconButton>
-              <MessageQuestion />
-            </IconButton>
-            <IconButton>
-              <Notification />
-            </IconButton>
-          </Box>
-          <Box display="flex">
-            <Box alignItems="center">
-              <Typography variant="subtitle1" color="black">
-                Anima Agrawal
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                color="grey"
-                textAlign="right"
-                mt="-4px"
-              >
-                U.P, India
-              </Typography>
+          {matches && (
+            <Box mx={3}>
+              <IconButton>
+                <Calendar2 />
+              </IconButton>
+              <IconButton>
+                <MessageQuestion />
+              </IconButton>
+              <IconButton>
+                <Notification />
+              </IconButton>
             </Box>
+          )}
+          <Box display="flex">
+            {matches && (
+              <Box alignItems="center">
+                <Typography variant="subtitle1" color="black">
+                  Anima Agrawal
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  color="grey"
+                  textAlign="right"
+                  mt="-4px"
+                >
+                  U.P, India
+                </Typography>
+              </Box>
+            )}
             <Box marginLeft="5px" justifyContent="space-between">
               <IconButton sx={{ mt: "-4px" }}>
                 <img src={user} alt="user-logo" />

@@ -1,4 +1,12 @@
-import { Box, Button, Divider, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import linkIcon from "../assets/link.svg";
 import editIcon from "../assets/edit.svg";
 import addIcon from "../assets/add.svg";
@@ -12,22 +20,40 @@ import menuIcon from "../assets/menu.svg";
 import Kanban from "./Kanban";
 
 const Canvas = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <Box display="flex" justifyContent="space-between" pt={4} px={4}>
-        <Box display="flex" alignItems="center">
-          <Typography variant="h4" fontWeight="bold">
-            Mobile App
-          </Typography>
-          <Box marginLeft={0.5}>
-            <IconButton>
-              <img src={editIcon} alt="edit-icon" width={30} height={30} />
-            </IconButton>
-            <IconButton sx={{ marginLeft: "-8px" }}>
-              <img src={linkIcon} alt="link-icon" width={30} height={30} />
-            </IconButton>
+        {matches ? (
+          <Box display="flex" flexDirection="column">
+            <Typography variant="h4" fontWeight="bold">
+              Mobile App
+            </Typography>
+            <Box ml={-1}>
+              <IconButton>
+                <img src={editIcon} alt="edit-icon" width={30} height={30} />
+              </IconButton>
+              <IconButton sx={{ marginLeft: "-8px" }}>
+                <img src={linkIcon} alt="link-icon" width={30} height={30} />
+              </IconButton>
+            </Box>
           </Box>
-        </Box>
+        ) : (
+          <Box display="flex" alignItems="center">
+            <Typography variant="h4" fontWeight="bold">
+              Mobile App
+            </Typography>
+            <Box>
+              <IconButton>
+                <img src={editIcon} alt="edit-icon" width={30} height={30} />
+              </IconButton>
+              <IconButton sx={{ marginLeft: "-8px" }}>
+                <img src={linkIcon} alt="link-icon" width={30} height={30} />
+              </IconButton>
+            </Box>
+          </Box>
+        )}
         <Box display="flex" alignItems="center">
           <IconButton>
             <img src={addIcon} alt="add-icon" width={18} height={18} />
@@ -96,7 +122,7 @@ const Canvas = () => {
               &nbsp;Share
             </Button>
           </Box>
-          <Divider orientation="vertical" sx={{mr: 1}} />
+          <Divider orientation="vertical" sx={{ mr: 1 }} />
           <Box display="flex" alignItems="center" justifyContent="center">
             <Box
               sx={{
