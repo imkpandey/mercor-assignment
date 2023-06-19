@@ -62,7 +62,7 @@ const Canvas = () => {
             Invite
           </Typography>
           <IconButton>
-            <img src={groupIcon} alt="group-icon" width={150} height={35} />
+            <img src={groupIcon} alt="group-icon" width={matches ? 100 : 150} height={35} />
           </IconButton>
         </Box>
       </Box>
@@ -73,7 +73,7 @@ const Canvas = () => {
               textTransform: "capitalize",
               color: "#787486",
               borderColor: "#787486",
-              marginRight: "10px",
+              marginRight: `${!matches ? "5px" : "2px"}`,
             }}
             variant="outlined"
             size="small"
@@ -101,7 +101,7 @@ const Canvas = () => {
             <img src={arrowIcon} alt="arrow-icon" width={16} height={16} />
           </Button>
         </Box>
-        <Box display="flex" alignItems="center" justifyContent="center">
+        <Box display="flex" justifyContent="center">
           <Box>
             <Button
               sx={{
@@ -123,7 +123,7 @@ const Canvas = () => {
             </Button>
           </Box>
           <Divider orientation="vertical" sx={{ mr: 1 }} />
-          <Box display="flex" alignItems="center" justifyContent="center">
+          <Box display="flex" justifyContent="center">
             <Box
               sx={{
                 backgroundColor: "#5030e5",
@@ -137,7 +137,7 @@ const Canvas = () => {
             >
               <img src={pauseIcon} alt="pause-icon" width={20} height={20} />
             </Box>
-            <IconButton>
+            <IconButton sx={{marginTop: "-3px"}}>
               <img src={menuIcon} alt="menu-icon" width={20} height={20} />
             </IconButton>
           </Box>

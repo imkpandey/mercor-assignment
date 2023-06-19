@@ -1,9 +1,12 @@
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography, IconButton, useTheme, useMediaQuery } from "@mui/material";
 import { Draggable } from "react-beautiful-dnd";
 import { Folder2, Message } from "iconsax-react";
 import { MoreHoriz } from "@mui/icons-material";
 
 const KanbanCard = ({ card, index }) => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <Draggable draggableId={card.title} index={index}>
       {(provided) => (
@@ -58,7 +61,7 @@ const KanbanCard = ({ card, index }) => {
                 </Box>
               ): null}
             </Box>
-            <Box display="flex" justifyContent="space-between">
+              <Box display="flex" sx={{ justifyContent: matches ? "space-between" : null }}>
               <Box
                 display="flex"
                 alignItems="center"
