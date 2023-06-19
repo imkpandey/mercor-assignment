@@ -25,35 +25,23 @@ const Canvas = () => {
   return (
     <>
       <Box display="flex" justifyContent="space-between" pt={4} px={4}>
-        {matches ? (
-          <Box display="flex" flexDirection="column">
-            <Typography variant="h4" fontWeight="bold">
-              Mobile App
-            </Typography>
-            <Box ml={-1}>
-              <IconButton>
-                <img src={editIcon} alt="edit-icon" width={30} height={30} />
-              </IconButton>
-              <IconButton sx={{ marginLeft: "-8px" }}>
-                <img src={linkIcon} alt="link-icon" width={30} height={30} />
-              </IconButton>
-            </Box>
+        <Box
+          display="flex"
+          flexDirection={matches ? "column" : null}
+          alignItems={!matches ? "center" : null}
+        >
+          <Typography variant="h4" fontWeight="bold">
+            Mobile App
+          </Typography>
+          <Box ml={matches ? -1 : null}>
+            <IconButton>
+              <img src={editIcon} alt="edit-icon" width={30} height={30} />
+            </IconButton>
+            <IconButton sx={{ marginLeft: "-8px" }}>
+              <img src={linkIcon} alt="link-icon" width={30} height={30} />
+            </IconButton>
           </Box>
-        ) : (
-          <Box display="flex" alignItems="center">
-            <Typography variant="h4" fontWeight="bold">
-              Mobile App
-            </Typography>
-            <Box>
-              <IconButton>
-                <img src={editIcon} alt="edit-icon" width={30} height={30} />
-              </IconButton>
-              <IconButton sx={{ marginLeft: "-8px" }}>
-                <img src={linkIcon} alt="link-icon" width={30} height={30} />
-              </IconButton>
-            </Box>
-          </Box>
-        )}
+        </Box>
         <Box display="flex" alignItems="center">
           <IconButton>
             <img src={addIcon} alt="add-icon" width={18} height={18} />
@@ -62,7 +50,12 @@ const Canvas = () => {
             Invite
           </Typography>
           <IconButton>
-            <img src={groupIcon} alt="group-icon" width={matches ? 100 : 150} height={35} />
+            <img
+              src={groupIcon}
+              alt="group-icon"
+              width={matches ? 100 : 150}
+              height={35}
+            />
           </IconButton>
         </Box>
       </Box>
@@ -87,6 +80,7 @@ const Canvas = () => {
               textTransform: "capitalize",
               color: "#787486",
               borderColor: "#787486",
+              marginRight: "2px"
             }}
             variant="outlined"
             size="small"
@@ -137,7 +131,7 @@ const Canvas = () => {
             >
               <img src={pauseIcon} alt="pause-icon" width={20} height={20} />
             </Box>
-            <IconButton sx={{marginTop: "-3px"}}>
+            <IconButton sx={{ marginTop: "-3px" }}>
               <img src={menuIcon} alt="menu-icon" width={20} height={20} />
             </IconButton>
           </Box>
