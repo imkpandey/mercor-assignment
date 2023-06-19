@@ -13,9 +13,9 @@ import { Circle, MoreHoriz } from "@mui/icons-material";
 import { Box, Typography, IconButton, Divider, useTheme } from "@mui/material";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ArrowLeft from "./icons/ArrowLeft";
-import ArrowRight from "./icons/ArrowRight";
 import logoIcon from "../assets/logo.svg";
 import message from "../assets/message.svg";
+import ColorFilter from "./icons/ColorFilter"
 
 const Item = ({ title, icon }) => {
   return (
@@ -64,7 +64,7 @@ const Sidebar = () => {
         <Menu iconShape="square">
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <ArrowRight /> : undefined}
+            icon={isCollapsed ? <ColorFilter /> : undefined}
             style={{
               margin: "0 0 15px 0",
             }}

@@ -80,7 +80,6 @@ const Canvas = () => {
               textTransform: "capitalize",
               color: "#787486",
               borderColor: "#787486",
-              marginRight: "2px"
             }}
             variant="outlined"
             size="small"
