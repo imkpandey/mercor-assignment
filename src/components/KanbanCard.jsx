@@ -45,11 +45,11 @@ const KanbanCard = ({ card, index }) => {
               <MoreHoriz />
             </Box>
             <Box display="flex" flexDirection="column" mt={1} mb={1}>
-              <Typography variant="subtitle1" fontWeight="bold">
+              <Typography variant="subtitle1" fontWeight={600}>
                 {card.title}
               </Typography>
               {card.description ? (
-                <Typography variant="subtitle2" color="#787486">
+                <Typography variant="subtitle2" fontWeight={400} color="#787486">
                   {card.description}
                 </Typography>
               ) : null}

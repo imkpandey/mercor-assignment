@@ -26,7 +26,7 @@ const KanbanWrapper = ({ wrapper, cardData }) => {
       >
         <Box display="flex" >
           <Circle sx={{ alignSelf: "center", width: "10px", fill: `${wrapper.dotcolor}` }} />
-          <Typography variant="subtitle1" mx={1} fontWeight="bold">
+          <Typography variant="subtitle1" mx={1} fontWeight={500}>
             {wrapper.title}
           </Typography>
           <IconButton
